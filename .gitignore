@@ -27,6 +27,9 @@ project.xcworkspace
 node_modules/
 npm-debug.log
 
+# yarn
+yarn.lock
+
 # Logs
 logs
 *.log
