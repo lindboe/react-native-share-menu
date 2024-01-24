@@ -12,9 +12,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		62BD52422B6093E400902801 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BD52412B6093E400902801 /* ShareViewController.swift */; };
 		62BD52452B6093E400902801 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62BD52432B6093E400902801 /* MainInterface.storyboard */; };
 		62BD52492B6093E400902801 /* RNSM Basic Demo.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 62BD523F2B6093E400902801 /* RNSM Basic Demo.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		62BD52502B6095D000902801 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BD524F2B6095D000902801 /* ShareViewController.swift */; };
 		7699B88040F8A987B510C191 /* libPods-basicShareExample-basicShareExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-basicShareExample-basicShareExampleTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -66,9 +66,10 @@
 		5B7EB9410499542E8C5724F5 /* Pods-basicShareExample-basicShareExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-basicShareExample-basicShareExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-basicShareExample-basicShareExampleTests/Pods-basicShareExample-basicShareExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-basicShareExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-basicShareExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BD523F2B6093E400902801 /* RNSM Basic Demo.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RNSM Basic Demo.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		62BD52412B6093E400902801 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		62BD52442B6093E400902801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		62BD52462B6093E400902801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62BD524E2B6095CF00902801 /* RNSM Basic Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNSM Basic Demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		62BD524F2B6095D000902801 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareViewController.swift; path = ../../../../ios/ShareViewController.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = basicShareExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-basicShareExample-basicShareExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-basicShareExample-basicShareExampleTests.release.xcconfig"; path = "Target Support Files/Pods-basicShareExample-basicShareExampleTests/Pods-basicShareExample-basicShareExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -144,9 +145,10 @@
 		62BD52402B6093E400902801 /* RNSM Basic Demo */ = {
 			isa = PBXGroup;
 			children = (
-				62BD52412B6093E400902801 /* ShareViewController.swift */,
+				62BD524F2B6095D000902801 /* ShareViewController.swift */,
 				62BD52432B6093E400902801 /* MainInterface.storyboard */,
 				62BD52462B6093E400902801 /* Info.plist */,
+				62BD524E2B6095CF00902801 /* RNSM Basic Demo-Bridging-Header.h */,
 			);
 			path = "RNSM Basic Demo";
 			sourceTree = "<group>";
@@ -277,6 +279,7 @@
 					};
 					62BD523E2B6093E400902801 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -480,7 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62BD52422B6093E400902801 /* ShareViewController.swift in Sources */,
+				62BD52502B6095D000902801 /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +626,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
@@ -650,6 +654,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNSM Basic Demo/RNSM Basic Demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -663,6 +668,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
@@ -690,6 +696,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNSM Basic Demo/RNSM Basic Demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
