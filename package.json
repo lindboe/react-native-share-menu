@@ -23,6 +23,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
+    "@react-native/typescript-config": "0.73.1",
     "react": "18.2.0",
     "react-native": "^0.73.2"
   },
