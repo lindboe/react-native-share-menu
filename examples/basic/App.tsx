@@ -21,6 +21,8 @@ const App = () => {
 
   useEffect(() => {
     ShareMenu.getInitialShare(handleShare);
+    // Exhaustive deps don't produce desired behavior, this should only be used on app load
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const isImage: boolean = useMemo(() => {
@@ -38,6 +40,8 @@ const App = () => {
     return () => {
       listener.remove();
     };
+    // the handleShare function never changes, we don't need to add it here
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
