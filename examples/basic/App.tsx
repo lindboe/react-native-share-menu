@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useEffect, useCallback, useMemo} from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import ShareMenu from 'react-native-share-menu';
 
@@ -23,6 +23,15 @@ const App = () => {
     ShareMenu.getInitialShare(handleShare);
   }, []);
 
+  const isImage: boolean = useMemo(() => {
+    const result = !!sharedMimeType && sharedMimeType.startsWith('image/');
+    return result;
+  }, [sharedMimeType]);
+
+  const isFile: boolean = useMemo(() => {
+    return !!sharedMimeType && sharedMimeType !== 'text/plain' && !isImage;
+  }, [sharedMimeType, isImage]);
+
   useEffect(() => {
     const listener = ShareMenu.addNewShareListener(handleShare);
 
@@ -39,7 +48,7 @@ const App = () => {
         Shared text: {sharedMimeType === 'text/plain' ? sharedData : ''}
       </Text>
       <Text style={styles.instructions}>Shared image:</Text>
-      {sharedMimeType.startsWith('image/') && (
+      {isImage && (
         <Image
           style={styles.image}
           source={{uri: sharedData}}
@@ -47,10 +56,7 @@ const App = () => {
         />
       )}
       <Text style={styles.instructions}>
-        Shared file:{' '}
-        {sharedMimeType !== 'text/plain' && !sharedMimeType.startsWith('image/')
-          ? sharedData
-          : ''}
+        Shared file: {isFile ? sharedData : ''}
       </Text>
       <Text style={styles.instructions}>
         Extra data: {sharedExtraData ? JSON.stringify(sharedExtraData) : ''}
