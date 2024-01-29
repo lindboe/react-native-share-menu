@@ -12,7 +12,24 @@ const App = () => {
       return;
     }
 
-    const {mimeType, data, extraData} = item;
+    var data,
+      extraData,
+      mimeType = '';
+
+    if (item?.mimeType) {
+      data = item.data;
+      mimeType = item.mimeType;
+      extraData = item.extraData;
+      // Currently, iOS has an extra "data" key, whose value is an array that
+      // can have multiple objects in it. Here we're just looking at the first.
+    } else if (item.data?.[0]) {
+      const firstItem = item.data[0];
+      if (firstItem?.mimeType) {
+        data = firstItem.data;
+        mimeType = firstItem.mimeType;
+        extraData = firstItem.extraData;
+      }
+    }
 
     setSharedData(data);
     setSharedExtraData(extraData);
