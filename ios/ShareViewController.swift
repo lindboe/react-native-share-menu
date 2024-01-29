@@ -242,7 +242,7 @@ class ShareViewController: SLComposeServiceViewController {
   }
   
   func cancelRequest() {
-    extensionContext!.cancelRequest(withError: NSError())
+    extensionContext!.cancelRequest(withError: NSError(domain: "org.rnsm", code: 0, userInfo: nil))
   }
 
 }
