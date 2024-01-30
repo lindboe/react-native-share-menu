@@ -1,18 +1,20 @@
 # Custom iOS Share View
 
-### If you want a custom sharing view, do these steps
+If you want a custom sharing view, follow the steps in [IOS_DEBUGGING.md](./IOS_DEBUGGING.md), and then proceed with the steps below.
 
-## Create Bridging Header
+## Add React View Controller
 
-Right click on your Share Extension folder, and choose `New File...`
+Right click on your Share Extension folder, and choose `Add Files to "ProjectName"`
 
-Select Objective-C, make sure the target is your Share Extension
+On the pop-up, select `node_modules/react-native-share-menu/ios/ReactShareViewController.swift`. Make sure `Copy items if needed` is NOT selected and that the selected target is your newly created Share Extension.
 
-Create the file and say yes when prompted to create a Bridging Header
+If prompted, choose to add the bridging header.
 
-Delete the created `.m` file
+![React View Controller Instructions](screenshots/Xcode-06.png)
 
-Add the following to the new `Bridging-Header.h` file:
+### Edit the bridging header
+
+Add the following to the new `Bridging-Header.h` file in your share extension:
 
 ```Objective-c
 #import <React/RCTBridge.h>
@@ -21,13 +23,7 @@ Add the following to the new `Bridging-Header.h` file:
 #import <React/RCTRootView.h>
 ```
 
-## Add React View Controller
-
-Right click on your Share Extension folder, and choose `Add Files to "ProjectName"`
-
-On the pop-up, select `node_modules/react-native-share-menu/ios/ReactShareViewController.swift`. Make sure `Copy items if needed` is NOT selected and that the selected target is your newly created Share Extension
-
-![React View Controller Instructions](screenshots/Xcode-06.png)
+### Edit the storyboard
 
 Now go to your `MainInterface.storyboard` and:
 

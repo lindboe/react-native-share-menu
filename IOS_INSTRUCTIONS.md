@@ -164,7 +164,7 @@ This is likely an issue with your **url scheme configuration**. Double-check tha
 
 This is likely an issue with either your **bundle ID configuration or your app group ID configuration**. Double-check that your configuration matches the instructions, and use the example projects as a reference. If you still can't figure out what's wrong, follow the [IOS_DEBUGGING.md](./IOS_DEBUGGING.md) instructions to inspect the native code and the values it's receiving.
 
-### Build error `Sandbox: bash(5466) deny(1) file-write-create pods resources to copy`
+### Build error `Sandbox: bash(5466) deny(1) .../ios/Pods/resources-to-copy-rnsmBasicShare.txt` 
 
 Disable user script sandboxing (which defaults to on in Xcode 15).
 
