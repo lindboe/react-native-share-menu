@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useEffect, useCallback, useMemo} from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import ShareMenu from 'react-native-share-menu';
 
@@ -12,7 +12,23 @@ const App = () => {
       return;
     }
 
-    const {mimeType, data, extraData} = item;
+    var data,
+      mimeType = '';
+
+    if (item?.mimeType) {
+      data = item.data;
+      mimeType = item.mimeType;
+      // Currently, iOS has an extra "data" key, whose value is an array that
+      // can have multiple objects in it. Here we're just looking at the first.
+    } else if (item.data?.[0]) {
+      const firstItem = item.data[0];
+      if (firstItem?.mimeType) {
+        data = firstItem.data;
+        mimeType = firstItem.mimeType;
+      }
+    }
+    // extraData is top-level on both platforms
+    let extraData = item.extraData;
 
     setSharedData(data);
     setSharedExtraData(extraData);
@@ -21,7 +37,18 @@ const App = () => {
 
   useEffect(() => {
     ShareMenu.getInitialShare(handleShare);
+    // Exhaustive deps don't produce desired behavior, this should only be used on app load
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const isImage: boolean = useMemo(() => {
+    const result = !!sharedMimeType && sharedMimeType.startsWith('image/');
+    return result;
+  }, [sharedMimeType]);
+
+  const isFile: boolean = useMemo(() => {
+    return !!sharedMimeType && sharedMimeType !== 'text/plain' && !isImage;
+  }, [sharedMimeType, isImage]);
 
   useEffect(() => {
     const listener = ShareMenu.addNewShareListener(handleShare);
@@ -29,6 +56,8 @@ const App = () => {
     return () => {
       listener.remove();
     };
+    // the handleShare function never changes, we don't need to add it here
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -39,7 +68,7 @@ const App = () => {
         Shared text: {sharedMimeType === 'text/plain' ? sharedData : ''}
       </Text>
       <Text style={styles.instructions}>Shared image:</Text>
-      {sharedMimeType.startsWith('image/') && (
+      {isImage && (
         <Image
           style={styles.image}
           source={{uri: sharedData}}
@@ -47,10 +76,7 @@ const App = () => {
         />
       )}
       <Text style={styles.instructions}>
-        Shared file:{' '}
-        {sharedMimeType !== 'text/plain' && !sharedMimeType.startsWith('image/')
-          ? sharedData
-          : ''}
+        Shared file: {isFile ? sharedData : ''}
       </Text>
       <Text style={styles.instructions}>
         Extra data: {sharedExtraData ? JSON.stringify(sharedExtraData) : ''}
