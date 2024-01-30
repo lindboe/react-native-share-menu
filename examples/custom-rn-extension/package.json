@@ -10,8 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "18.2.0",
-    "react-native": "0.73.2",
+    "react": "link:../../node_modules/react",
+    "react-native": "link:../../node_modules/react-native",
     "react-native-share-menu": "link:../.."
   },
   "devDependencies": {
