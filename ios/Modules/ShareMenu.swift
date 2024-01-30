@@ -95,6 +95,7 @@ class ShareMenu: RCTEventEmitter {
             sharedData = data
             dispatchEvent(with: data, and: extraData)
             userDefaults.removeObject(forKey: USER_DEFAULTS_KEY)
+            userDefaults.removeObject(forKey: USER_DEFAULTS_EXTRA_DATA_KEY)
         }
     }
 

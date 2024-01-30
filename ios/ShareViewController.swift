@@ -47,7 +47,12 @@ class ShareViewController: SLComposeServiceViewController {
         return
       }
 
-      handlePost(items)
+      if (contentText != nil && contentText != "") {
+        handlePost(items, extraData: [MESSAGE_KEY: contentText!])
+      } else {
+        handlePost(items)
+      }
+
     }
 
     override func configurationItems() -> [Any]! {
