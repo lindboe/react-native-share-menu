@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "customRNShareExtensionExample.app"
-               BlueprintName = "customRNShareExtensionExample"
-               ReferencedContainer = "container:customRNShareExtensionExample.xcodeproj">
+               BuildableName = "customRNShareExample.app"
+               BlueprintName = "customRNShareExample"
+               ReferencedContainer = "container:customRNShareExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "customRNShareExtensionExampleTests.xctest"
-               BlueprintName = "customRNShareExtensionExampleTests"
-               ReferencedContainer = "container:customRNShareExtensionExample.xcodeproj">
+               BuildableName = "customRNShareExampleTests.xctest"
+               BlueprintName = "customRNShareExampleTests"
+               ReferencedContainer = "container:customRNShareExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "customRNShareExtensionExample.app"
-            BlueprintName = "customRNShareExtensionExample"
-            ReferencedContainer = "container:customRNShareExtensionExample.xcodeproj">
+            BuildableName = "customRNShareExample.app"
+            BlueprintName = "customRNShareExample"
+            ReferencedContainer = "container:customRNShareExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "customRNShareExtensionExample.app"
-            BlueprintName = "customRNShareExtensionExample"
-            ReferencedContainer = "container:customRNShareExtensionExample.xcodeproj">
+            BuildableName = "customRNShareExample.app"
+            BlueprintName = "customRNShareExample"
+            ReferencedContainer = "container:customRNShareExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

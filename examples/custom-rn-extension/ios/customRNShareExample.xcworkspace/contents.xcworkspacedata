@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:customRNShareExtensionExample.xcodeproj">
+      location = "group:/Users/lizzi/dev/react-native-share-menu/examples/custom-rn-extension/ios/customRNShareExample.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

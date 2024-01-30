@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface customRNShareExtensionExampleTests : XCTestCase
+@interface customRNShareExampleTests : XCTestCase
 
 @end
 
-@implementation customRNShareExtensionExampleTests
+@implementation customRNShareExampleTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

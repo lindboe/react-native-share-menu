@@ -1,4 +1,4 @@
-package com.customrnshareextensionexample
+package com.customrnshareExample
 
 import android.app.Application
 import com.facebook.react.PackageList
