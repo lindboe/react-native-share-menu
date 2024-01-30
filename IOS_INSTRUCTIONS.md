@@ -153,3 +153,22 @@ Finally, in your `AppDelegate.m` add the following:
     }
 @end
 ```
+
+## Troubleshooting
+
+### Main app does not open when expected
+
+This is likely an issue with your **url scheme configuration**. Double-check that your configuration matches the instructions, and use the example projects as a reference.
+
+### Main app opens after sharing, but the shared data is empty
+
+This is likely an issue with either your **bundle ID configuration or your app group ID configuration**. Double-check that your configuration matches the instructions, and use the example projects as a reference. If you still can't figure out what's wrong, follow the [IOS_DEBUGGING.md](./IOS_DEBUGGING.md) instructions to inspect the native code and the values it's receiving.
+
+### Build error `Sandbox: bash(5466) deny(1) file-write-create pods resources to copy`
+
+Disable user script sandboxing (which defaults to on in Xcode 15).
+
+1. In the left hand pane of Xcode, click on your project.
+2. On the left side of the center pane, under the "Targets" list, select your share extension.
+3. At the top of the center pane, click "Build Settings" and search for "sandboxing".
+3. Set "User Script Sandboxing" to "NO" for your share extension.
