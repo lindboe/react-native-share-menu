@@ -34,7 +34,7 @@ react-native link
 
 ## [API Docs](API_DOCS.md)
 
-## [Example Project](example/)
+## [Example Projects](examples/)
 
 ### Example Usage
 
