@@ -22,7 +22,10 @@ The easiest option here is to first build and run your main app like you normall
 1. Build and run your main app.
 2. In Xcode, navigate to "Debug" > "Attach to process by PID or name...".
 3. In the "PID or Process Name" field, input the name of your share extension target (in the basic example project, this is `rnsmBasicShare`). In the bar at the top of the Xcode window, you should see "Waiting to attach to *shareExtensionProcessName*...".
-  ![Waiting for debugger example](screenshots/Xcode-04.png)
+  <figure>
+    <img src="screenshots/android-menu.png" alt="Waiting to attach example" style />
+  </figure>
+
   1. If you see "Running *shareExtensionProcessName*...", that means the debugger attached to an already-running process instead. Try closing all apps in use on your device and try again.
   2. Attaching by name, instead of picking from the list of existing processes, is useful in case you might have an existing `rnsmBasicShare` process that is behaving badly, which will often be the case if it's listed in the process menu while you're not running the share extension.
 
